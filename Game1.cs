@@ -46,8 +46,6 @@ namespace Monogamw_1___Adding_Content
             dougTexture = Content.Load<Texture2D>("doug");
             spaceTexture = Content.Load<Texture2D>("SpaceBackground");
             
-
-
         }
 
         protected override void Update(GameTime gameTime)
