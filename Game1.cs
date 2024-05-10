@@ -14,6 +14,8 @@ namespace Monogamw_1___Adding_Content
         Texture2D dinoTexture;
         Texture2D dougTexture;
         Texture2D spaceTexture;
+        Texture2D fireballTexture;
+        Rectangle fireRect;
 
 
         public Game1()
@@ -29,6 +31,8 @@ namespace Monogamw_1___Adding_Content
             _graphics.PreferredBackBufferWidth = 1100;
             _graphics.PreferredBackBufferHeight = 800;
             _graphics.ApplyChanges();
+            
+            fireRect = new Rectangle(200, 125, 100, 100);
 
             this.Window.Title = "Monogame is the BEST";
 
@@ -45,7 +49,7 @@ namespace Monogamw_1___Adding_Content
             dinoTexture = Content.Load<Texture2D>("dino");
             dougTexture = Content.Load<Texture2D>("doug");
             spaceTexture = Content.Load<Texture2D>("SpaceBackground");
-            
+            fireballTexture = Content.Load<Texture2D>("fireball");
         }
 
         protected override void Update(GameTime gameTime)
@@ -68,8 +72,9 @@ namespace Monogamw_1___Adding_Content
 
             _spriteBatch.Begin();
             _spriteBatch.Draw(spaceTexture, new Vector2(15, 0), Color.White);
-            _spriteBatch.Draw(dinoTexture, new Vector2(15,0), Color.White);
+            _spriteBatch.Draw(dinoTexture, new Vector2(15,100), Color.White);
             _spriteBatch.Draw(dougTexture, new Vector2(608, 250), Color.White);
+            _spriteBatch.Draw(fireballTexture, fireRect, Color.White);
             _spriteBatch.End();
 
             base.Draw(gameTime);
